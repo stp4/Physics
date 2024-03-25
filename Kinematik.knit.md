@@ -1,0 +1,184 @@
+# Kinematik
+
+
+
+
+
+
+
+
+
+## Grundgleichung 
+
+Gleichförmige und beschleunigte Bewegung.
+
+Point-kinetics in a fixed coordinate system
+<!-- $\vec{r}=(x,y,z)$ -->
+<!-- $\vec{v}=(\dot{x},\dot{y},\dot{z})$ -->
+<!-- $\vec{a}=(\ddot{x},\ddot{y},\ddot{z})$ -->
+
+$$\vec{v(t)} = \frac{d\vec{r(t)}}{dt} =\dot{\vec{r}}$$
+
+$$\vec{a} = \dot{\vec{v}}= \ddot{\vec{r}}$$
+
+acceleration is constant: $v(t)=v_0+at$  and $s(t)=s_0+v_0t+\frac{1}{2}at^2$
+
+
+<!-- Quelle: https://johanw.home.xs4all.nl/physics_html/index.html -->
+
+
+
+## Kochrezept zum Lösen von Textaufgaben
+
+1)    Alle Parameter aufschreiben und in SI-Einheiten umrechnen
+2)    Die Gesuchte(n) Parameter als Funktion hinschreiben
+3)    Nur bei veränderliche Bewegung wird je nach Fragestellung  entweder ein s,t-Diagramm, ein v,t-Diagramm oder ein a,t-Diagramm erstellt
+4)    Grundgleichung hinschreiben
+5)    Entwicklung der gesuchten Beziehung und Berechnung
+6)    Kontrolle durch Überschlagsrechnung 
+
+
+
+
+
+
+
+
+## Gleichförmige und beschleunigte Bewegung. 
+
+### Beispiele
+Quelle: Berber, Joachim, u. a. Physik in Formeln und Tabellen. 7., Durchges. Aufl, Teubner, 1994.
+
+
+1. Welche mittlere Geschwindigkeit $v_m$ hat der Kolben eines PKW bei einer Drehzahl von $n = 3600 min^{-1}$ und einem Kolbenhub von $h = 0.069 m$
+ 
+2. Durch Seitenwind werden die Abgase eines *90 m* langen Diesel getriebenen Zuges der mit einer Geschwindigkeit von $v_1 = 70 km/h$  fährt angetrieben so dass sie *30 m* seitwärts vom Zug wahrgenommen werden welche Wind-Geschwindigkeit $v_2$ ist der Zug ausgesetzt?
+ 
+ 
+ 
+3. Ein Sprinter legt die Strecke $s=100m$   in $t_1=10.4s$ zurück davon die ersten $s_1=50m$  gleichmäßig beschleunigt und der Rest mit konstanter Geschwindigkeit wie groß sind die erreichte Höchstgeschwindigkeit und die Beschleunigung?
+
+###  Lösungen
+
+Welche mittlere Geschwindigkeit $v_m$ hat der Kolben eines PKW bei einer Drehzahl von $n = 3600 min^{-1}$ und einem Kolbenhub von $h = 0.069 m$
+
+1. Parameter und SI-Einheiten
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+h = 0.069
+n = 3600
+#' Umrechnen in SI Einheit
+h <- h / 60
+```
+:::
+
+
+
+2. Funktion $v=f(s,t)$ 
+
+3. s,t-Diagramm nicht zielführend da es um die Durchschnitts-Geschwingigkeit handelt.
+
+5. gesuchten Beziehung $\bar{v} = \frac{1}{2}(v_0 + v) = \frac{\Delta{s}}{\Delta{t}}$ mit $\Delta t=n^{-1}$ und $\Delta s=2h$
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+v_m <-  2 * h * n
+```
+:::
+
+
+
+Ergebniss $v_m$ = 8.28 m/s
+
+
+
+
+
+
+---
+
+
+Durch Seitenwind werden die Abgase eines 90m langen Diesel getriebenen Zuges der mit einer Geschwindigkeit von $v_1 = 70 km/h$  fährt angetrieben so dass sie 30 m seitwärts vom Zug wahrgenommen werden welche Wind-Geschwindigkeit $v_2$ ist der Zug ausgesetzt?
+<!-- 32/2 -->
+
+1. Parameter und SI-Einheiten
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+s_1 = 90
+v_1 = 70
+s_2 = 30
+# SI Einheit
+v_1 <- v_1 * 1000 / 60 / 60
+```
+:::
+
+
+
+2. Funktion $v=f(s,t)$ 
+
+3. s,t-Diagramm nicht zielführend da es um die Durchschnitts-Geschwingigkeit handelt.
+
+
+
+
+
+
+
+
+
+ 
+  + Konstante Geschwindigkeit: $s=v\cdot t$
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+t <- s_1 / v_1
+v_2 <- s_2  /t
+```
+:::
+
+
+
+
+Wind-Geschwindigkeit = 6.5 m/s
+
+
+---
+
+Ein Sprinter legt die Strecke $s=100m$   in $t_1=10.4s$ zurück davon die ersten $s_1=50m$  gleichmäßig beschleunigt und der Rest mit konstanter Geschwindigkeit wie groß sind die erreichte Höchstgeschwindigkeit und die Beschleunigung?
+<!-- 34/19 -->
+
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+s = 100
+t_1 = 10.4
+s_1 = 50
+```
+:::
+
+
+
+  + Konstante Geschwindigkeit: $s=v\cdot t$
+  + Konstante Beschleunigung: $v=v_0+a\cdot t$; $s=v_0 t+ \frac{1}{2}a t^2$
+
+
+
+
