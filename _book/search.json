@@ -1,0 +1,92 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Physics",
+    "section": "",
+    "text": "Preface\nHier wird eine Sammlung von Physikaufgaben erstellt.\nDas Buch wird mit Quarto und R geschrieben.\nHier ein Beispiel für die Verwendung von R als Taschenrechner\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from quarto and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\nHier ist ein Beispiel für die Verwendung von mermaidzur Erstellung von Flussdiagrammen.\n\n\n\n\n\nflowchart LR\n  A[Hard edge] --&gt; B(Round edge)\n  B --&gt; C{Decision}\n  C --&gt; D[Result one]\n  C --&gt; E[Result two]\n\n\n\n\n\n\n\n\n\n\n\npie title Pets adopted by volunteers\n    \"Dogs\" : 386\n    \"Cats\" : 85\n    \"Rats\" : 15\n\n\n\n\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "Statik.html",
+    "href": "Statik.html",
+    "title": "2  Statics mechanics",
+    "section": "",
+    "text": "In statics, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Statics mechanics</span>"
+    ]
+  },
+  {
+    "objectID": "Kinematik.html",
+    "href": "Kinematik.html",
+    "title": "3  Kinematik",
+    "section": "",
+    "text": "3.1 Grundgleichung\nGleichförmige und beschleunigte Bewegung.\nPoint-kinetics in a fixed coordinate system\n\\[\\vec{v(t)} = \\frac{d\\vec{r(t)}}{dt} =\\dot{\\vec{r}}\\]\n\\[\\vec{a} = \\dot{\\vec{v}}= \\ddot{\\vec{r}}\\]\nacceleration is constant: \\(v(t)=v_0+at\\) and \\(s(t)=s_0+v_0t+\\frac{1}{2}at^2\\)\nQuelle für die Formeln (Berber, Kacher, and Langer 1994) und für cpy&paste (Wevers, n.d.).",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Kinematik</span>"
+    ]
+  },
+  {
+    "objectID": "Kinematik.html#kochrezept-zum-lösen-von-textaufgaben",
+    "href": "Kinematik.html#kochrezept-zum-lösen-von-textaufgaben",
+    "title": "3  Kinematik",
+    "section": "3.2 Kochrezept zum Lösen von Textaufgaben",
+    "text": "3.2 Kochrezept zum Lösen von Textaufgaben\n\nAlle Parameter aufschreiben und in SI-Einheiten umrechnen\nDie Gesuchte(n) Parameter als Funktion hinschreiben\nNur bei veränderliche Bewegung wird je nach Fragestellung entweder ein s,t-Diagramm, ein v,t-Diagramm oder ein a,t-Diagramm erstellt\nGrundgleichung hinschreiben\nEntwicklung der gesuchten Beziehung und Berechnung\nKontrolle durch Überschlagsrechnung",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Kinematik</span>"
+    ]
+  },
+  {
+    "objectID": "Kinematik.html#gleichförmige-und-beschleunigte-bewegung.",
+    "href": "Kinematik.html#gleichförmige-und-beschleunigte-bewegung.",
+    "title": "3  Kinematik",
+    "section": "3.3 Gleichförmige und beschleunigte Bewegung.",
+    "text": "3.3 Gleichförmige und beschleunigte Bewegung.\n\n3.3.1 Beispiele\nDie Beispiele stammen aus dem Buch (Lindner, Lindner, and Lindner 1998)\n\nWelche mittlere Geschwindigkeit \\(v_m\\) hat der Kolben eines PKW bei einer Drehzahl von \\(n = 3600 min^{-1}\\) und einem Kolbenhub von \\(h = 0.069 m\\)\nDurch Seitenwind werden die Abgase eines 90 m langen Diesel getriebenen Zuges der mit einer Geschwindigkeit von \\(v_1 = 70 km/h\\) fährt angetrieben so dass sie 30 m seitwärts vom Zug wahrgenommen werden welche Wind-Geschwindigkeit \\(v_2\\) ist der Zug ausgesetzt?\nEin Sprinter legt die Strecke \\(s=100m\\) in \\(t_1=10.4s\\) zurück davon die ersten \\(s_1=50m\\) gleichmäßig beschleunigt und der Rest mit konstanter Geschwindigkeit wie groß sind die erreichte Höchstgeschwindigkeit und die Beschleunigung?\n\n\n\n3.3.2 Lösungen\nWelche mittlere Geschwindigkeit \\(v_m\\) hat der Kolben eines PKW bei einer Drehzahl von \\(n = 3600 min^{-1}\\) und einem Kolbenhub von \\(h = 0.069 m\\)\n\nParameter und SI-Einheiten\n\n\nh = 0.069\nn = 3600\n#' Umrechnen in SI Einheit\nh &lt;- h / 60\n\n\nFunktion \\(v=f(s,t)\\)\ns,t-Diagramm nicht zielführend da es um die Durchschnitts-Geschwingigkeit handelt.\ngesuchten Beziehung \\(\\bar{v} = \\frac{1}{2}(v_0 + v) = \\frac{\\Delta{s}}{\\Delta{t}}\\) mit \\(\\Delta t=n^{-1}\\) und \\(\\Delta s=2h\\)\n\n\nv_m &lt;-  2 * h * n\n\nErgebniss \\(v_m\\) = 8.28 m/s\n\nDurch Seitenwind werden die Abgase eines 90m langen Diesel getriebenen Zuges der mit einer Geschwindigkeit von \\(v_1 = 70 km/h\\) fährt angetrieben so dass sie 30 m seitwärts vom Zug wahrgenommen werden welche Wind-Geschwindigkeit \\(v_2\\) ist der Zug ausgesetzt? \n\nParameter und SI-Einheiten\n\n\ns_1 = 90\nv_1 = 70\ns_2 = 30\n# SI Einheit\nv_1 &lt;- v_1 * 1000 / 60 / 60\n\n\nFunktion \\(v=f(s,t)\\)\ns,t-Diagramm nicht zielführend da es um die Durchschnitts-Geschwingigkeit handelt.\n\n\nKonstante Geschwindigkeit: \\(s=v\\cdot t\\)\n\n\nt &lt;- s_1 / v_1\nv_2 &lt;- s_2  /t\n\nWind-Geschwindigkeit = 6.5 m/s\n\nEin Sprinter legt die Strecke \\(s=100m\\) in \\(t_1=10.4s\\) zurück davon die ersten \\(s_1=50m\\) gleichmäßig beschleunigt und der Rest mit konstanter Geschwindigkeit wie groß sind die erreichte Höchstgeschwindigkeit und die Beschleunigung? \n\ns = 100\nt_1 = 10.4\ns_1 = 50\n\n\nKonstante Geschwindigkeit: \\(s=v\\cdot t\\)\nKonstante Beschleunigung: \\(v=v_0+a\\cdot t\\); \\(s=v_0 t+ \\frac{1}{2}a t^2\\)\n\n\n\n\n\nBerber, Joachim, Heinz Kacher, and Rudolf Langer. 1994. Physik in Formeln und Tabellen. 7., durchges. Aufl. Stuttgart: Teubner.\n\n\nLindner, Helmut, Harald Lindner, and Hartmut Lindner. 1998. Physikalische Aufgaben: 1201 Aufgaben mit Lösungen aus allen Gebieten der Physik. 31., neubearb. Aufl. München Wien: Fachbuchverlag Leipzig im Carl-Hanser-Verlag.\n\n\nWevers, Johan. n.d. “Physics Formulary LaTex.” https://johanw.home.xs4all.nl/physics_html/index.html.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Kinematik</span>"
+    ]
+  },
+  {
+    "objectID": "Mechanik-Fluessigkeiten.html",
+    "href": "Mechanik-Fluessigkeiten.html",
+    "title": "4  Fluid mechanics",
+    "section": "",
+    "text": "In fluid mechanics, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Fluid mechanics</span>"
+    ]
+  },
+  {
+    "objectID": "Elektrik.html",
+    "href": "Elektrik.html",
+    "title": "5  Electrics",
+    "section": "",
+    "text": "In Electrics, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Electrics</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Berber, Joachim, Heinz Kacher, and Rudolf Langer. 1994. Physik in\nFormeln und Tabellen. 7., durchges. Aufl. Stuttgart: Teubner.\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.\n\n\nLindner, Helmut, Harald Lindner, and Hartmut Lindner. 1998.\nPhysikalische Aufgaben: 1201 Aufgaben mit Lösungen aus allen\nGebieten der Physik. 31., neubearb. Aufl. München Wien:\nFachbuchverlag Leipzig im Carl-Hanser-Verlag.\n\n\nWevers, Johan. n.d. “Physics Formulary LaTex.” https://johanw.home.xs4all.nl/physics_html/index.html.",
+    "crumbs": [
+      "References"
+    ]
+  }
+]

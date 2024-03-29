@@ -8,8 +8,10 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - Statik.qmd
     - Kinematik.qmd
-    - summary.qmd
+    - Mechanik-Fluessigkeiten.qmd
+    - Elektrik.qmd
     - references.qmd
 
 bibliography: references.bib

@@ -1,8 +1,10 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+Hier wird eine Sammlung von Physikaufgaben erstellt.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Das Buch wird mit [Quarto](https://quarto.org/docs/books) und [R](https://www.r-project.org/) geschrieben.
+
+Hier ein Beispiel für die Verwendung von R als Taschenrechner
 
 ```{r}
 1 + 1

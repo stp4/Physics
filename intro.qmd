@@ -1,6 +1,6 @@
 # Introduction
 
-This is a book created from markdown and executable code.
+This is a book created from quarto and executable code.
 
 See @knuth84 for additional discussion of literate programming.
 
@@ -8,6 +8,7 @@ See @knuth84 for additional discussion of literate programming.
 1 + 1
 ```
 
+Hier ist ein Beispiel für die Verwendung von [mermaid](https://mermaid.js.org/intro/)zur Erstellung von Flussdiagrammen.
 
 ```{mermaid}
 flowchart LR
@@ -16,8 +17,6 @@ flowchart LR
   C --> D[Result one]
   C --> E[Result two]
 ```
-
-
 
 ```{mermaid}
 pie title Pets adopted by volunteers
