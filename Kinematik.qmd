@@ -122,3 +122,19 @@ s_1 = 50
 
 -   Konstante Geschwindigkeit: $s=v\cdot t$
 -   Konstante Beschleunigung: $v=v_0+a\cdot t$; $s=v_0 t+ \frac{1}{2}a t^2$
+
+
+
+------------------------------------------------------------------------
+
+Welche maximale Beschleunigung kann ein PKW mit der Masse m = 1400 kg bei einer Geschwindigkeit von v = 72 km/h und voller Leistung P =50 kW entwickeln, wenn der Fahrwiederstand Rr = 600 N beträgt
+<!--38/47-->
+
+
+
+```{r}
+ 
+
+```
+
+
